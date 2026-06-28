@@ -11,5 +11,5 @@ Route::get('/redoc', function () {
 });
 
 Route::get('/openapi.yaml', function () {
-    return response()->file(storage_path('app/private/scribe/openapi.yaml'));
+    return redirect('/docs.openapi');
 });

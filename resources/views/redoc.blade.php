@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <redoc spec-url="{{ url('/openapi.yaml') }}"></redoc>
+    <redoc spec-url="{{ url('/docs.openapi') }}"></redoc>
     <script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js"></script>
 </body>
 </html>

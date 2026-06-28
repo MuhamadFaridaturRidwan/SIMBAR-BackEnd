@@ -1,0 +1,415 @@
+name: 'Barang Keluar'
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/barang-keluar
+    metadata:
+      custom: []
+      groupName: 'Barang Keluar'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "success": true,
+            "message": "Barang keluar retrieved successfully",
+            "data": [
+              {
+                "id_keluar": 1,
+                "id_barang": 3,
+                "tanggal_keluar": "2026-04-22T14:15:00.000000Z",
+                "jumlah": 50,
+                "referensi": "DO-2026-045",
+                "catatan": "Pengiriman ke customer PT ABC",
+                "oleh": "Admin User"
+              }
+            ]
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/v1/barang-keluar
+    metadata:
+      custom: []
+      groupName: 'Barang Keluar'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created resource in storage.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      id_barang:
+        custom: []
+        name: id_barang
+        description: 'ID barang.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      tanggal_keluar:
+        custom: []
+        name: tanggal_keluar
+        description: 'Tanggal keluar.'
+        required: true
+        example: '2026-04-22'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      jumlah:
+        custom: []
+        name: jumlah
+        description: Jumlah.
+        required: true
+        example: 50
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      referensi:
+        custom: []
+        name: referensi
+        description: Referensi.
+        required: false
+        example: DO-2026-045
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      catatan:
+        custom: []
+        name: catatan
+        description: Catatan.
+        required: false
+        example: 'Pengiriman ke customer PT ABC'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      oleh:
+        custom: []
+        name: oleh
+        description: Oleh.
+        required: false
+        example: 'Admin User'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      id_barang: 3
+      tanggal_keluar: '2026-04-22'
+      jumlah: 50
+      referensi: DO-2026-045
+      catatan: 'Pengiriman ke customer PT ABC'
+      oleh: 'Admin User'
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 201
+        content: |-
+          {
+            "success": true,
+            "message": "Barang keluar created successfully",
+            "data": {
+              "id_keluar": 1,
+              "id_barang": 3,
+              "jumlah": 50
+            }
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/v1/barang-keluar/{id}'
+    metadata:
+      custom: []
+      groupName: 'Barang Keluar'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified resource.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'ID barang keluar.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: '1'
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "success": true,
+            "message": "Barang keluar retrieved successfully",
+            "data": {
+              "id_keluar": 1,
+              "id_barang": 3,
+              "jumlah": 50
+            }
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/barang-keluar/{id}'
+    metadata:
+      custom: []
+      groupName: 'Barang Keluar'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'ID barang keluar.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: '1'
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      id_barang:
+        custom: []
+        name: id_barang
+        description: 'ID barang.'
+        required: false
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      tanggal_keluar:
+        custom: []
+        name: tanggal_keluar
+        description: 'Tanggal keluar.'
+        required: false
+        example: '2026-04-22'
+        type: date
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      jumlah:
+        custom: []
+        name: jumlah
+        description: Jumlah.
+        required: false
+        example: 50
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      referensi:
+        custom: []
+        name: referensi
+        description: Referensi.
+        required: false
+        example: DO-2026-045
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      catatan:
+        custom: []
+        name: catatan
+        description: Catatan.
+        required: false
+        example: 'Pengiriman ke customer PT ABC'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      oleh:
+        custom: []
+        name: oleh
+        description: Oleh.
+        required: false
+        example: 'Admin User'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      id_barang: 3
+      tanggal_keluar: '2026-04-22'
+      jumlah: 50
+      referensi: DO-2026-045
+      catatan: 'Pengiriman ke customer PT ABC'
+      oleh: 'Admin User'
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "success": true,
+            "message": "Barang keluar updated successfully",
+            "data": {
+              "id_keluar": 1,
+              "id_barang": 3,
+              "jumlah": 50
+            }
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/barang-keluar/{id}'
+    metadata:
+      custom: []
+      groupName: 'Barang Keluar'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'ID barang keluar.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: '1'
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "success": true,
+            "message": "Barang keluar deleted successfully"
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

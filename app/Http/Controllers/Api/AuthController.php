@@ -19,6 +19,69 @@ class AuthController extends Controller
     }
 
     /**
+     * Register new user
+     * @group Authentication
+     * @bodyParam username string required Username. Example: newuser
+     * @bodyParam email string required Email. Example: user@example.com
+     * @bodyParam password string required Password (min 6 characters). Example: password123
+     * @response 201 {
+     *   "success": true,
+     *   "message": "User registered successfully",
+     *   "data": {
+     *     "id_user": 1,
+     *     "username": "newuser",
+     *     "email": "user@example.com"
+     *   }
+     * }
+     * @response 422 {
+     *   "success": false,
+     *   "message": "Validation failed",
+     *   "errors": {
+     *     "username": ["The username has already been taken."],
+     *     "email": ["The email has already been taken."]
+     *   }
+     * }
+     */
+    public function register(Request $request)
+    {
+        try {
+            $validated = $request->validate([
+                'username' => 'required|string|unique:tbl_user,username|max:50',
+                'password' => 'required|string|min:6',
+                'email' => 'required|string|email|unique:tbl_user,email|max:100',
+            ]);
+
+            $user = User::create([
+                'username' => $validated['username'],
+                'password' => Hash::make($validated['password']),
+                'email' => $validated['email'],
+            ]);
+
+            return response()->json([
+                'success' => true,
+                'message' => 'User registered successfully',
+                'data' => [
+                    'id_user' => $user->id_user,
+                    'username' => $user->username,
+                    'email' => $user->email,
+                ],
+            ], 201);
+        } catch (ValidationException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Validation failed',
+                'errors' => $e->errors(),
+            ], 422);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Registration failed',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
+    }
+
+    /**
      * Login user and return JWT token
      * @group Authentication
      * @bodyParam username string required Username. Example: admin
@@ -32,8 +95,7 @@ class AuthController extends Controller
      *     "expires_in": 86400,
      *     "refresh_expires_in": 604800,
      *     "user": {
-     *       "id": 1,
-     *       "name": "Admin User",
+     *       "id_user": 1,
      *       "username": "admin",
      *       "email": "admin@example.com"
      *     }
@@ -72,8 +134,7 @@ class AuthController extends Controller
                     'expires_in' => $tokenData['expires_in'],
                     'refresh_expires_in' => $tokenData['refresh_expires_in'],
                     'user' => [
-                        'id' => $user->id,
-                        'name' => $user->name,
+                        'id_user' => $user->id_user,
                         'username' => $user->username,
                         'email' => $user->email,
                     ],
@@ -180,10 +241,9 @@ class AuthController extends Controller
      *   "success": true,
      *   "message": "User retrieved successfully",
      *   "data": {
-     *     "id": 1,
-     *     "name": "Admin User",
+     *     "id_user": 1,
      *     "username": "admin",
-     *     "email": "admin@example.com"
+     *     "email": "admin@gmail.com"
      *   }
      * }
      * @response 401 {
@@ -225,8 +285,7 @@ class AuthController extends Controller
                 'success' => true,
                 'message' => 'User retrieved successfully',
                 'data' => [
-                    'id' => $user->id,
-                    'name' => $user->name,
+                    'id_user' => $user->id_user,
                     'username' => $user->username,
                     'email' => $user->email,
                 ],

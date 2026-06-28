@@ -34,7 +34,7 @@ class JWTService
             'iat' => $issuedAt,
             'exp' => $expire,
             'refresh_exp' => $refreshExpire,
-            'user_id' => $user->id,
+            'user_id' => $user->id_user,
             'username' => $user->username,
             'email' => $user->email,
         ];
