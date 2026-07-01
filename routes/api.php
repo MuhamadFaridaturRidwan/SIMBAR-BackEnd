@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BarangController;
 use App\Http\Controllers\Api\BarangMasukController;
 use App\Http\Controllers\Api\BarangKeluarController;
+use App\Http\Controllers\Api\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,9 @@ Route::prefix('v1')->group(function () {
 
     // Protected routes
     Route::middleware('jwt.auth')->group(function () {
+        // Dashboard route
+        Route::get('/dashboard', [DashboardController::class, 'index']);
+
         // Legacy items routes
         Route::apiResource('items', ItemController::class);
         

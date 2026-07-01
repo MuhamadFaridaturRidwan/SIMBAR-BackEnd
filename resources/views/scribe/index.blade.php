@@ -154,16 +154,13 @@
                             </li>
                                                                         </ul>
                             </ul>
-                    <ul id="tocify-header-endpoints" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="endpoints">
-                    <a href="#endpoints">Endpoints</a>
+                    <ul id="tocify-header-dashboard" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="dashboard">
+                    <a href="#dashboard">Dashboard</a>
                 </li>
-                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-documentation">
-                                <a href="#endpoints-GETapi-documentation">Handles the API request and renders the Swagger documentation view.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-oauth2-callback">
-                                <a href="#endpoints-GETapi-oauth2-callback">Handles the OAuth2 callback and retrieves the required file for the redirect.</a>
+                                    <ul id="tocify-subheader-dashboard" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="dashboard-GETapi-v1-dashboard">
+                                <a href="#dashboard-GETapi-v1-dashboard">Get dashboard statistics</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -198,7 +195,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 28, 2026</li>
+        <li>Last updated: July 1, 2026</li>
     </ul>
 </div>
 
@@ -898,7 +895,7 @@ fetch(url, {
     &quot;data&quot;: {
         &quot;id_user&quot;: 1,
         &quot;username&quot;: &quot;admin&quot;,
-        &quot;email&quot;: &quot;admin@example.com&quot;
+        &quot;email&quot;: &quot;admin@gmail.com&quot;
     }
 }</code>
  </pre>
@@ -3624,31 +3621,31 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                <h1 id="endpoints">Endpoints</h1>
+                <h1 id="dashboard">Dashboard</h1>
 
     
 
-                                <h2 id="endpoints-GETapi-documentation">Handles the API request and renders the Swagger documentation view.</h2>
+                                <h2 id="dashboard-GETapi-v1-dashboard">Get dashboard statistics</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-documentation">
+<span id="example-requests-GETapi-v1-dashboard">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/documentation" \
+    --get "http://localhost:8000/api/v1/dashboard" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/documentation"
+    "http://localhost:8000/api/v1/dashboard"
 );
 
 const headers = {
@@ -3664,192 +3661,96 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-documentation">
-            <blockquote>
-            <p>Example response (500):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Server Error&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-documentation" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-documentation"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-documentation"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-documentation" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-documentation">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-documentation" data-method="GET"
-      data-path="api/documentation"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-documentation', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-documentation"
-                    onclick="tryItOut('GETapi-documentation');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-documentation"
-                    onclick="cancelTryOut('GETapi-documentation');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-documentation"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/documentation</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-documentation"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-documentation"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-GETapi-oauth2-callback">Handles the OAuth2 callback and retrieves the required file for the redirect.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-oauth2-callback">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/oauth2-callback" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/oauth2-callback"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-oauth2-callback">
+<span id="example-responses-GETapi-v1-dashboard">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">content-type: text/html; charset=utf-8
-cache-control: no-cache, private
-access-control-allow-origin: *
- </code></pre></details>         <pre>
+                <pre>
 
-<code class="language-json" style="max-height: 300px;">&lt;!doctype html&gt;
-&lt;html lang=&quot;en-US&quot;&gt;
-&lt;body&gt;
-&lt;script src=&quot;oauth2-redirect.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;Dashboard statistics retrieved successfully&quot;,
+    &quot;data&quot;: {
+        &quot;total_produk&quot;: 8,
+        &quot;stok_tersedia&quot;: 151,
+        &quot;stok_rendah&quot;: 2,
+        &quot;stok_habis&quot;: 1,
+        &quot;stok_per_kategori&quot;: {
+            &quot;Safety&quot;: 26,
+            &quot;Packaging&quot;: 5,
+            &quot;Equipment&quot;: 120,
+            &quot;Office Supplies&quot;: 2
+        },
+        &quot;aktivitas_terakhir&quot;: [
+            {
+                &quot;id&quot;: 3,
+                &quot;type&quot;: &quot;barang_keluar&quot;,
+                &quot;tanggal&quot;: &quot;2026-04-28 15:02:00&quot;,
+                &quot;jumlah&quot;: 5,
+                &quot;nama_barang&quot;: &quot;Helm Fanzhi Terkuat&quot;,
+                &quot;oleh&quot;: &quot;Admin User&quot;
+            }
+        ],
+        &quot;ringkasan_stok_rendah&quot;: [
+            {
+                &quot;id_barang&quot;: 4,
+                &quot;kode_barang&quot;: &quot;LBL-005&quot;,
+                &quot;nama_barang&quot;: &quot;Label Barcode Roll&quot;,
+                &quot;stok_saat_ini&quot;: 2,
+                &quot;stok_min&quot;: 5
+            }
+        ]
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;Unauthenticated&quot;
+}</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-oauth2-callback" hidden>
+<span id="execution-results-GETapi-v1-dashboard" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-oauth2-callback"></span>:
+                id="execution-response-status-GETapi-v1-dashboard"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-oauth2-callback"
+    <pre class="json"><code id="execution-response-content-GETapi-v1-dashboard"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-oauth2-callback" hidden>
+<span id="execution-error-GETapi-v1-dashboard" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-oauth2-callback">
+    <pre><code id="execution-error-message-GETapi-v1-dashboard">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-oauth2-callback" data-method="GET"
-      data-path="api/oauth2-callback"
+<form id="form-GETapi-v1-dashboard" data-method="GET"
+      data-path="api/v1/dashboard"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-oauth2-callback', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-dashboard', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-oauth2-callback"
-                    onclick="tryItOut('GETapi-oauth2-callback');">Try it out ⚡
+                    id="btn-tryout-GETapi-v1-dashboard"
+                    onclick="tryItOut('GETapi-v1-dashboard');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-oauth2-callback"
-                    onclick="cancelTryOut('GETapi-oauth2-callback');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-v1-dashboard"
+                    onclick="cancelTryOut('GETapi-v1-dashboard');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-oauth2-callback"
+                    id="btn-executetryout-GETapi-v1-dashboard"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -3857,7 +3758,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/oauth2-callback</code></b>
+            <b><code>api/v1/dashboard</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -3866,7 +3767,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-oauth2-callback"
+                              name="Content-Type"                data-endpoint="GETapi-v1-dashboard"
                value="application/json"
                data-component="header">
     <br>
@@ -3878,7 +3779,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-oauth2-callback"
+                              name="Accept"                data-endpoint="GETapi-v1-dashboard"
                value="application/json"
                data-component="header">
     <br>
