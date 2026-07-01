@@ -13,13 +13,10 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
-    // Tambahkan baris ini dan sesuaikan dengan nama tabel di MySQL Anda
     protected $table = 'tbl_user'; 
     
-    // Jika primary key Anda bukan 'id' (misal: 'id_user'), tambahkan juga ini:
     protected $primaryKey = 'id_user';
     
-    // Nonaktifkan timestamps karena tabel tidak memiliki created_at dan updated_at
     public $timestamps = false;
 
     /**
