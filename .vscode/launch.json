@@ -1,1 +1,0 @@
-{"servers": {"simbar-api": {"type": "stdio", "command": "php", "args": ["artisan", "serve"]}}}
