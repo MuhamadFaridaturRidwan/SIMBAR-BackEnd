@@ -15,9 +15,6 @@ class JwtMiddleware
         $this->jwtService = $jwtService;
     }
 
-    /**
-     * Handle an incoming request.
-     */
     public function handle(Request $request, Closure $next)
     {
         $token = $request->bearerToken();
@@ -38,7 +35,6 @@ class JwtMiddleware
             ], 401);
         }
 
-        // Add user data to request for use in controllers
         $request->attributes->add(['user_id' => $userData['user_id']]);
 
         return $next($request);

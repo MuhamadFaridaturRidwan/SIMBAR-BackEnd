@@ -166,8 +166,6 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         try {
-            // In a real application, you might want to blacklist the token
-            // For now, we'll just return success
             return response()->json([
                 'success' => true,
                 'message' => 'Logout successful',
